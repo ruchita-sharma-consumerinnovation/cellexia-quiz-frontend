@@ -373,6 +373,261 @@ const translations = {
             next: "Suivant",
             submit: "Soumettre"
         }
+    },
+    nl: {
+        languageSelector: "Taal",
+        section1: {
+            title: "Sectie 1",
+            age: "Wat is je leeftijd?",
+            gender: "Wat is je geslacht?",
+            ageOptions: [
+                "18-25",
+                "26-35",
+                "36-45",
+                "46-55",
+                "56-65",
+                "66-75",
+                "75+"
+            ],
+            genderOptions: [
+                "Man",
+                "Vrouw",
+                "Liever niet zeggen"
+            ]
+        },
+        section2: {
+            title: "Sectie 2",
+            mirrorBothers: "Wat stoort je tegenwoordig het meest aan je rimpels als je in de spiegel kijkt?",
+            everydayEffect: "Hoe beïnvloeden je rimpels je in het dagelijks leven?",
+            mirrorBothersOptions: [
+                "Ze laten me er moe uitzien, zelfs als ik dat niet ben",
+                "Ze zijn dieper geworden dan vroeger",
+                "Ze vallen meer op op foto's dan ik zou willen",
+                "Ze zijn het meest zichtbaar in fel licht",
+                "Ik herken mezelf niet meer",
+                "Ze laten me ouder lijken dan mijn vrienden"
+            ],
+            everydayEffectOptions: [
+                "Mensen vragen of ik moe of gestrest ben",
+                "Ik voel me minder zelfverzekerd tijdens werkvergaderingen",
+                "Ik besteed meer tijd aan het verbergen ervan",
+                "Ik vermijd videocalls waar mogelijk",
+                "Mijn make-up hoopt zich op in de lijntjes",
+                "Ik betrap mezelf erop dat ik frons om bepaalde rimpels te vermijden"
+            ]
+        },
+        section3: {
+            title: "Sectie 3",
+            triedSoFar: "Wat heb je tot nu toe geprobeerd tegen je rimpels?",
+            wishLessNoticeable: "Wanneer wil je het liefst dat je rimpels minder zichtbaar zijn?",
+            whyBuy: "Waarom wil je de Deep Wrinkle Filler Gel kopen?",
+            triedSoFarOptions: [
+                "Gewone gezichtscrèmes, maar die lijken niet sterk genoeg",
+                "Dure crèmes met grote beloften die niet werden waargemaakt",
+                "Nog niets – ik wacht op iets dat echt werkt",
+                "Verschillende serums die prettig aanvoelden maar weinig deden",
+                "Natuurlijke remedies die niet krachtig genoeg waren",
+                "Drogisterijproducten die alleen op de oppervlakte blijven zitten"
+            ],
+            wishLessNoticeableOptions: [
+                "Tijdens belangrijke werkpresentaties",
+                "Op foto's van speciale gelegenheden",
+                "Bij het ontmoeten van nieuwe mensen",
+                "Elke keer als ik in de spiegel kijk",
+                "Wanneer mijn kinderen selfies met me willen maken",
+                "Bij familie bijeenkomsten waar familieleden commentaar geven",
+                "Wanneer ik oude foto's vergelijk met nu"
+            ],
+            whyBuyOptions: [
+                "Ik wil er zo jong uitzien als ik me van binnen voel",
+                "Ik ben het zat om er moe uit te zien als ik dat niet ben",
+                "Ik heb iets sterkers nodig dan gewone crèmes",
+                "Ik wil me zelfverzekerder voelen in vergaderingen en op foto's",
+                "Mijn diepe rimpels worden moeilijker te verbergen",
+                "Ik vind het fijn dat het wordt ondersteund door echte wetenschap en studies",
+                "Ik wil snelle resultaten zonder injecties",
+                "Er komen belangrijke evenementen aan en ik wil er op mijn best uitzien",
+                "Mijn gewone crèmes werken niet op mijn diepere rimpels",
+                "Ik vertrouw op producten met klinisch bewezen effect",
+                "Ik wil iets dat snel werkt wanneer ik het nodig heb",
+                "Ik wil een oplossing die ik thuis kan gebruiken"
+            ]
+        },
+        buttons: {
+            skip: "Overslaan",
+            next: "Volgende",
+            submit: "Verzenden"
+        }
+    },
+    da: {
+        languageSelector: "Sprog",
+        section1: {
+            title: "Sektion 1",
+            age: "Hvad er din alder?",
+            gender: "Hvad er dit køn?",
+            ageOptions: [
+                "18-25",
+                "26-35",
+                "36-45",
+                "46-55",
+                "56-65",
+                "66-75",
+                "75+"
+            ],
+            genderOptions: [
+                "Mand",
+                "Kvinde",
+                "Foretrækker ikke at svare"
+            ]
+        },
+        section2: {
+            title: "Sektion 2",
+            mirrorBothers: "Når du kigger i spejlet for tiden, hvad generer dig mest ved dine rynker?",
+            everydayEffect: "Hvordan påvirker dine rynker dig i dagligdagen?",
+            mirrorBothersOptions: [
+                "De får mig til at se træt ud, selv når jeg ikke er det",
+                "De er blevet dybere, end de plejede at være",
+                "De er mere synlige på billeder, end jeg kunne ønske",
+                "De er mest tydelige i skarpt lys",
+                "Jeg genkender ikke mig selv længere",
+                "De får mig til at se ældre ud end mine venner"
+            ],
+            everydayEffectOptions: [
+                "Folk spørger, om jeg er træt eller stresset",
+                "Jeg føler mig mindre selvsikker til arbejds­møder",
+                "Jeg bruger mere tid på at dække dem",
+                "Jeg undgår videoopkald, hvis muligt",
+                "Min makeup sætter sig i linjerne",
+                "Jeg tager mig selv i at rynke panden for at undgå visse rynker"
+            ]
+        },
+        section3: {
+            title: "Sektion 3",
+            triedSoFar: "Hvad har du prøvet indtil videre mod dine rynker?",
+            wishLessNoticeable: "Hvornår ønsker du mest, at dine rynker var mindre synlige?",
+            whyBuy: "Hvorfor vil du købe Deep Wrinkle Filler Gel?",
+            triedSoFarOptions: [
+                "Almindelige ansigtscremer, men de virker ikke stærke nok",
+                "Dyre cremer med store løfter, der ikke holdt",
+                "Ingenting endnu – jeg har ventet på noget, der virkelig virker",
+                "Forskellige sera, der føltes rare, men ikke gjorde meget",
+                "Naturlige midler, der ikke var stærke nok",
+                "Apoteksprodukter, der kun lagde sig på overfladen"
+            ],
+            wishLessNoticeableOptions: [
+                "Under vigtige arbejdspræsentationer",
+                "På billeder ved særlige begivenheder",
+                "Når jeg møder nye mennesker",
+                "Hver gang jeg ser mig selv i spejlet",
+                "Når mine børn vil tage selfies med mig",
+                "Ved familiesammenkomster, hvor slægtninge kommenterer",
+                "Når jeg sammenligner gamle billeder med nu"
+            ],
+            whyBuyOptions: [
+                "Jeg vil se lige så ung ud, som jeg føler mig indeni",
+                "Jeg er træt af at se træt ud, når jeg ikke er det",
+                "Jeg har brug for noget stærkere end almindelige cremer",
+                "Jeg vil føle mig mere selvsikker til møder og på billeder",
+                "Mine dybe rynker er sværere at dække",
+                "Jeg kan lide, at det er understøttet af videnskab og studier",
+                "Jeg vil have hurtige resultater uden injektioner",
+                "Der kommer vigtige begivenheder, og jeg vil se bedst muligt ud",
+                "Mine almindelige cremer virker ikke på mine dybere rynker",
+                "Jeg stoler på produkter med klinisk dokumenteret effekt",
+                "Jeg vil have noget, der virker hurtigt, når jeg har brug for det",
+                "Jeg vil have en løsning, jeg kan bruge derhjemme"
+            ]
+        },
+        buttons: {
+            skip: "Spring over",
+            next: "Næste",
+            submit: "Indsend"
+        }
+    },
+    es: {
+        languageSelector: "Idioma",
+        section1: {
+            title: "Sección 1",
+            age: "¿Cuál es tu edad?",
+            gender: "¿Cuál es tu género?",
+            ageOptions: [
+                "18-25",
+                "26-35",
+                "36-45",
+                "46-55",
+                "56-65",
+                "66-75",
+                "75+"
+            ],
+            genderOptions: [
+                "Hombre",
+                "Mujer",
+                "Prefiero no decirlo"
+            ]
+        },
+        section2: {
+            title: "Sección 2",
+            mirrorBothers: "Cuando te miras en el espejo últimamente, ¿qué es lo que más te molesta de tus arrugas?",
+            everydayEffect: "¿Cómo te afectan tus arrugas en la vida diaria?",
+            mirrorBothersOptions: [
+                "Me hacen parecer cansado/a incluso cuando no lo estoy",
+                "Son más profundas que antes",
+                "Aparecen más en las fotos de lo que me gustaría",
+                "Son más visibles con luz fuerte",
+                "Ya no me reconozco",
+                "Me hacen parecer mayor que mis amigos"
+            ],
+            everydayEffectOptions: [
+                "La gente me pregunta si estoy cansado/a o estresado/a",
+                "Me siento menos seguro/a en reuniones de trabajo",
+                "Paso más tiempo tratando de ocultarlas",
+                "Evito las videollamadas cuando es posible",
+                "Mi maquillaje se acumula en las líneas",
+                "Me descubro frunciendo el ceño para evitar ciertas arrugas"
+            ]
+        },
+        section3: {
+            title: "Sección 3",
+            triedSoFar: "¿Qué has probado hasta ahora para tus arrugas?",
+            wishLessNoticeable: "¿Cuándo desearías más que tus arrugas fueran menos visibles?",
+            whyBuy: "¿Por qué quieres comprar el Deep Wrinkle Filler Gel?",
+            triedSoFarOptions: [
+                "Cremas faciales normales, pero no parecen lo suficientemente fuertes",
+                "Cremas caras con grandes promesas que no cumplieron",
+                "Nada aún, he estado esperando encontrar algo que realmente funcione",
+                "Varios sueros que se sienten bien, pero no hacen mucho",
+                "Remedios naturales que no fueron lo suficientemente efectivos",
+                "Productos de farmacia que solo se quedan en la superficie"
+            ],
+            wishLessNoticeableOptions: [
+                "Durante presentaciones importantes en el trabajo",
+                "En fotos de eventos especiales",
+                "Cuando conozco gente nueva",
+                "Cada vez que me miro en el espejo",
+                "Cuando mis hijos quieren tomarse selfies conmigo",
+                "En reuniones familiares donde los parientes comentan",
+                "Cuando comparo fotos antiguas con las actuales"
+            ],
+            whyBuyOptions: [
+                "Quiero verme tan joven como me siento por dentro",
+                "Estoy cansado/a de parecer cansado/a cuando no lo estoy",
+                "Necesito algo más fuerte que las cremas normales",
+                "Quiero sentirme más seguro/a en reuniones y fotos",
+                "Mis arrugas profundas son cada vez más difíciles de ocultar",
+                "Me gusta que tenga respaldo científico y estudios",
+                "Quiero resultados rápidos sin inyecciones",
+                "Se acercan eventos importantes y quiero lucir lo mejor posible",
+                "Mis cremas habituales no funcionan en mis arrugas más profundas",
+                "Confío en productos con pruebas clínicas detrás",
+                "Quiero algo que funcione rápido cuando lo necesite",
+                "Quiero una solución que pueda usar en casa"
+            ]
+        },
+        buttons: {
+            skip: "Saltar",
+            next: "Siguiente",
+            submit: "Enviar"
+        }
     }
 };
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
@@ -1394,6 +1649,30 @@ function LanguageSelector({ language, setLanguage }) {
                         fileName: "[project]/components/language-selector.tsx",
                         lineNumber: 17,
                         columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
+                        value: "nl",
+                        children: "Nederlands"
+                    }, void 0, false, {
+                        fileName: "[project]/components/language-selector.tsx",
+                        lineNumber: 18,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
+                        value: "da",
+                        children: "Dansk"
+                    }, void 0, false, {
+                        fileName: "[project]/components/language-selector.tsx",
+                        lineNumber: 19,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
+                        value: "es",
+                        children: "Español"
+                    }, void 0, false, {
+                        fileName: "[project]/components/language-selector.tsx",
+                        lineNumber: 20,
+                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
@@ -1475,24 +1754,63 @@ function Quiz() {
     }["Quiz.useCallback[handleNext]"], [
         currentSection
     ]);
+    const getSelectedLanguage = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "Quiz.useCallback[getSelectedLanguage]": ()=>{
+            return language;
+        }
+    }["Quiz.useCallback[getSelectedLanguage]"], [
+        language
+    ]);
     const handleSkip = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "Quiz.useCallback[handleSkip]": ()=>{
-            window.location.href = "http://cellexialabs.com";
+            // Determine the selected language
+            const selectedLanguage = getSelectedLanguage(); // Get the currently selected language
+            // Set the URL based on the selected language
+            let redirectUrl = "https://cellexialabs.com/products/deep-wrinkle-filler-gel"; // Default URL (English)
+            switch(selectedLanguage){
+                case "en":
+                    redirectUrl = "https://cellexialabs.com/products/deep-wrinkle-filler-gel";
+                    break;
+                case "fr":
+                    redirectUrl = "https://cellexialabs.com/fr/products/deep-wrinkle-filler-gel";
+                    break;
+                case "nl":
+                    redirectUrl = "https://cellexialabs.com/nl/products/diepe-rimpelvuller-gel";
+                    break;
+                case "da":
+                    redirectUrl = "https://cellexialabs.com/da/products/rynkeudfyldende-gel";
+                    break;
+                case "es":
+                    redirectUrl = "https://cellexialabs.com/es/products/gel-rellenador-de-arrugas-profundas";
+                    break;
+                default:
+                    redirectUrl = "https://cellexialabs.com/products/deep-wrinkle-filler-gel";
+            }
+            // Redirect to the determined URL
+            window.location.href = redirectUrl;
         }
-    }["Quiz.useCallback[handleSkip]"], []);
+    }["Quiz.useCallback[handleSkip]"], [
+        getSelectedLanguage
+    ]);
     const translateToEnglish = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "Quiz.useCallback[translateToEnglish]": (answer, section, question)=>{
             if (language === "en") return answer;
             const englishTranslations = __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$translations$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["translations"].en[section];
             const frenchTranslations = __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$translations$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["translations"].fr[section];
-            if (typeof englishTranslations === "object" && typeof frenchTranslations === "object") {
+            const dutchTranslations = __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$translations$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["translations"].nl[section];
+            const danishTranslations = __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$translations$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["translations"].da[section];
+            const spanishTranslations = __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$translations$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["translations"].es[section];
+            if (typeof englishTranslations === "object" && typeof frenchTranslations === "object" && typeof dutchTranslations === "object" && typeof danishTranslations === "object" && typeof spanishTranslations === "object") {
                 const questionKey = Object.keys(englishTranslations).find({
-                    "Quiz.useCallback[translateToEnglish].questionKey": (key)=>frenchTranslations[key] === question
+                    "Quiz.useCallback[translateToEnglish].questionKey": (key)=>frenchTranslations[key] === question || dutchTranslations[key] === question || danishTranslations[key] === question || spanishTranslations[key] === question
                 }["Quiz.useCallback[translateToEnglish].questionKey"]);
-                if (questionKey && Array.isArray(frenchTranslations[`${questionKey}Options`])) {
+                if (questionKey && (Array.isArray(frenchTranslations[`${questionKey}Options`]) || Array.isArray(dutchTranslations[`${questionKey}Options`]) || Array.isArray(danishTranslations[`${questionKey}Options`]) || Array.isArray(spanishTranslations[`${questionKey}Options`]))) {
                     const frenchOptions = frenchTranslations[`${questionKey}Options`];
+                    const dutchOptions = dutchTranslations[`${questionKey}Options`];
+                    const danishOptions = danishTranslations[`${questionKey}Options`];
+                    const spanishOptions = spanishTranslations[`${questionKey}Options`];
                     const englishOptions = englishTranslations[`${questionKey}Options`];
-                    const index = frenchOptions.indexOf(answer);
+                    const index = frenchOptions.indexOf(answer) !== -1 ? frenchOptions.indexOf(answer) : dutchOptions.indexOf(answer) !== -1 ? dutchOptions.indexOf(answer) : danishOptions.indexOf(answer) !== -1 ? danishOptions.indexOf(answer) : spanishOptions.indexOf(answer) !== -1 ? spanishOptions.indexOf(answer) : -1;
                     if (index !== -1) {
                         return englishOptions[index];
                     }
@@ -1543,7 +1861,31 @@ function Quiz() {
         "Quiz.useCallback[handleSubmit]": ()=>{
             const dataToSubmit = prepareDataForSubmission();
             console.log("Data to be sent to the backend:", JSON.stringify(dataToSubmit, null, 2));
-            window.location.href = "http://cellexialabs.com";
+            // Determine the selected language
+            const language = getSelectedLanguage(); // Assuming this function returns the selected language
+            // Set the URL based on the selected language
+            let redirectUrl = "https://cellexialabs.com/products/deep-wrinkle-filler-gel"; // Default URL (English)
+            switch(language){
+                case "en":
+                    redirectUrl = "https://cellexialabs.com/products/deep-wrinkle-filler-gel";
+                    break;
+                case "fr":
+                    redirectUrl = "https://cellexialabs.com/fr/products/deep-wrinkle-filler-gel";
+                    break;
+                case "nl":
+                    redirectUrl = "https://cellexialabs.com/nl/products/diepe-rimpelvuller-gel";
+                    break;
+                case "da":
+                    redirectUrl = "https://cellexialabs.com/da/products/rynkeudfyldende-gel";
+                    break;
+                case "es":
+                    redirectUrl = "https://cellexialabs.com/es/products/gel-rellenador-de-arrugas-profundas";
+                    break;
+                default:
+                    redirectUrl = "https://cellexialabs.com/products/deep-wrinkle-filler-gel";
+            }
+            // Redirect to the determined URL
+            window.location.href = redirectUrl;
         }
     }["Quiz.useCallback[handleSubmit]"], [
         prepareDataForSubmission
@@ -1571,12 +1913,12 @@ function Quiz() {
                     setLanguage: setLanguage
                 }, void 0, false, {
                     fileName: "[project]/app/page.tsx",
-                    lineNumber: 178,
+                    lineNumber: 272,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 177,
+                lineNumber: 271,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$progress$2d$bar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ProgressBar"], {
@@ -1584,7 +1926,7 @@ function Quiz() {
                 totalSections: 3
             }, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 180,
+                lineNumber: 274,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1596,7 +1938,7 @@ function Quiz() {
                         language: language
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 183,
+                        lineNumber: 277,
                         columnNumber: 11
                     }, this),
                     currentSection === 2 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$section$2d$2$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Section2"], {
@@ -1605,7 +1947,7 @@ function Quiz() {
                         language: language
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 190,
+                        lineNumber: 284,
                         columnNumber: 11
                     }, this),
                     currentSection === 3 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$section$2d$3$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Section3"], {
@@ -1616,23 +1958,23 @@ function Quiz() {
                         language: language
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 197,
+                        lineNumber: 291,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 181,
+                lineNumber: 275,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/page.tsx",
-        lineNumber: 176,
+        lineNumber: 270,
         columnNumber: 5
     }, this);
 }
-_s(Quiz, "G8UcJMjUi8ANEA05wJXqf7i/KkY=");
+_s(Quiz, "W/1rQN9AKONIsR8p0PBhDphUbc4=");
 _c = Quiz;
 var _c;
 __turbopack_refresh__.register(_c, "Quiz");
