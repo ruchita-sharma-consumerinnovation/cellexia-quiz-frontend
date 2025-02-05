@@ -13,14 +13,15 @@ import {
 } from "@/components/ui/sidebar"
 
 export function SideNavigation() {
-  const [activeTab, setActiveTab] = useState<'responses'>('responses')
+  const [activeTab, setActiveTab] = useState<'responses' | 'analytics'>('responses')
   const router = useRouter()
 
-  const handleTabChange = (tab: 'responses' ) => {
+  const handleTabChange = (tab: 'responses' | 'analytics' ) => {
     setActiveTab(tab)
     if (tab === 'responses') {
       router.push('/dashboard')
     } else {
+      router.push('/analytics')
       console.log('Quiz Answer Analysis tab clicked')
     }
   }
@@ -39,6 +40,15 @@ export function SideNavigation() {
             >
               <FileText className="mr-2" />
               Responses
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            <SidebarMenuButton
+              onClick={() => handleTabChange('analytics')}
+              isActive={activeTab === 'analytics'}
+            >
+              <FileText className="mr-2" />
+              Analytics
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>

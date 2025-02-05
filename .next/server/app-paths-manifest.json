@@ -1,8 +1,9 @@
 {
-  "/(admin)/dashboard/page": "app/(admin)/dashboard/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js",
   "/[lang]/page": "app/[lang]/page.js",
-  "/api/save-quiz-response/route": "app/api/save-quiz-response/route.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/login/page": "app/login/page.js",
+  "/api/login/route": "app/api/login/route.js",
+  "/(admin)/dashboard/page": "app/(admin)/dashboard/page.js",
+  "/(admin)/analytics/page": "app/(admin)/analytics/page.js"
 }
