@@ -30,6 +30,11 @@ export default function Quiz() {
     },
   });
 
+  let quizData = {
+    step1: {},
+    step2: {},
+  };
+
   useEffect(() => {
     if (params.lang && params.lang !== language) {
       setLanguage(params.lang as string);
@@ -232,11 +237,35 @@ export default function Quiz() {
     return preparedData;
   }, [answers, language, translateToEnglish]);
 
-  const handleSubmit = useCallback(() => {
+  const handleSubmit = useCallback(async () => {
     const dataToSubmit = prepareDataForSubmission();
+
+    try {
+      // Send the responses to your backend
+      const response = await fetch(
+        "http://localhost:3000/api/save-quiz-response",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(dataToSubmit),
+        }
+      );
+
+      // if (!response.ok) {
+      //   console.error("Failed to save quiz responses");
+      // }
+
+      const responseData = await response.json();
+
+    } catch (error) {
+      console.error("Error saving quiz responses:", error);
+    }
     console.log(
       "Data to be sent to the backend:",
       JSON.stringify(dataToSubmit, null, 2)
+    
     );
   
     // Determine the selected language
