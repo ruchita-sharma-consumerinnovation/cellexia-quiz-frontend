@@ -18,7 +18,7 @@ export function SurveyDashboard({ data }: SurveyDashboardProps) {
 
   return (
     <div className="space-y-8 p-8">
-      <h1 className="text-3xl font-bold">Survey Results Dashboard</h1>
+      <h1 className="text-3xl font-bold">Analytics Dashboard</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <Section1Graph data={ageData} title="Age Distribution" />
