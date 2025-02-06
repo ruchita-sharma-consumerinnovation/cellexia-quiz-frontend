@@ -1,5 +1,0 @@
-{
-  "/(admin)/dashboard/page": "app/(admin)/dashboard/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/api/fetch-quiz-response/route": "app/api/fetch-quiz-response/route.js"
-}

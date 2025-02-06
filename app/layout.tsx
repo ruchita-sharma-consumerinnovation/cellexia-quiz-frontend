@@ -1,9 +1,7 @@
 import "@/app/globals.css";
-import { Inter } from "next/font/google";
 import type React from "react";
 import Script from "next/script";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Quiz App",
@@ -39,7 +37,7 @@ export default function RootLayout({
           />
         </noscript>
       </head>
-      <body className={inter.className}>
+      <body>
         {children}
         <Script id="triple-pixel" strategy="afterInteractive">
           {`
