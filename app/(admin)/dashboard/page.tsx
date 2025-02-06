@@ -55,7 +55,7 @@ export default function Dashboard() {
     const fetchDashboardData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3000/api/fetch-quiz-response",
+          "/api/fetch-quiz-response",
           {
             method: "GET",
             headers: { "Content-Type": "application/json" },

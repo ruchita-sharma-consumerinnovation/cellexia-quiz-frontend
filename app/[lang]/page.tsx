@@ -272,7 +272,7 @@ export default function Quiz() {
     try {
       // Send the responses to your backend
       const response = await fetch(
-        "http://localhost:3000/api/save-quiz-response",
+        "/api/save-quiz-response",
         {
           method: "POST",
           headers: {
