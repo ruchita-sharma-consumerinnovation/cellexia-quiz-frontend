@@ -94,87 +94,39 @@ export default function Quiz() {
     window.location.href = redirectUrl;
   }, [getSelectedLanguage]);
 
-  const translateToEnglish = useCallback(
-    (text: string, section: string, originalQuestion: string): string => {
+  const translateTextToEnglish = useCallback(
+    (text: string, section: keyof typeof translations.en, originalText: string, isQuestion: boolean): string => {
       if (language === "en") return text;
 
-      const englishTranslations =
-        translations.en[section as keyof typeof translations.en];
-      const frenchTranslations =
-        translations.fr[section as keyof typeof translations.fr];
-      const dutchTranslations =
-        translations.nl[section as keyof typeof translations.nl];
-      const danishTranslations =
-        translations.da[section as keyof typeof translations.da];
-      const spanishTranslations =
-        translations.es[section as keyof typeof translations.es];
+      const englishTranslations = translations.en[section];
+      const currentTranslations = translations[language as keyof typeof translations][section];
 
-      if (
-        typeof englishTranslations === "object" &&
-        typeof frenchTranslations === "object" &&
-        typeof dutchTranslations === "object" &&
-        typeof danishTranslations === "object" &&
-        typeof spanishTranslations === "object"
-      ) {
-        // Check for answer translation first
-        const questionKeys = Object.keys(englishTranslations).filter((key) =>
-          key.endsWith("Options")
-        );
+      if (typeof englishTranslations === "object" && typeof currentTranslations === "object") {
+        if (isQuestion) {
+          const questionKey = Object.keys(englishTranslations).find(
+            (key) => currentTranslations[key as keyof typeof currentTranslations] === text
+          ) as keyof typeof englishTranslations;
 
-        for (const optionKey of questionKeys) {
-          const baseKey = optionKey.replace("Options", "");
-          const currentQuestion =
-            frenchTranslations[baseKey as keyof typeof frenchTranslations] ||
-            dutchTranslations[baseKey as keyof typeof dutchTranslations] ||
-            danishTranslations[baseKey as keyof typeof danishTranslations] ||
-            spanishTranslations[baseKey as keyof typeof spanishTranslations];
-
-          if (currentQuestion === originalQuestion) {
-            const frenchOptions = frenchTranslations[
-              optionKey as keyof typeof frenchTranslations
-            ] as string[];
-            const dutchOptions = dutchTranslations[
-              optionKey as keyof typeof dutchTranslations
-            ] as string[];
-            const danishOptions = danishTranslations[
-              optionKey as keyof typeof danishTranslations
-            ] as string[];
-            const spanishOptions = spanishTranslations[
-              optionKey as keyof typeof spanishTranslations
-            ] as string[];
-            const englishOptions = englishTranslations[
-              optionKey as keyof typeof englishTranslations
-            ] as string[];
-
-            const index =
-              frenchOptions.indexOf(text) !== -1
-                ? frenchOptions.indexOf(text)
-                : dutchOptions.indexOf(text) !== -1
-                ? dutchOptions.indexOf(text)
-                : danishOptions.indexOf(text) !== -1
-                ? danishOptions.indexOf(text)
-                : spanishOptions.indexOf(text) !== -1
-                ? spanishOptions.indexOf(text)
-                : -1;
-
-            return index !== -1 ? englishOptions[index] : text;
+          if (questionKey) {
+            return englishTranslations[questionKey] as string;
           }
-        }
+        } else {
+          const questionKeys = Object.keys(englishTranslations).filter((key) =>
+            key.endsWith("Options")
+          );
 
-        // Check for question translation
-        const questionKey = Object.keys(englishTranslations).find(
-          (key) =>
-            frenchTranslations[key as keyof typeof frenchTranslations] ===
-              text ||
-            dutchTranslations[key as keyof typeof dutchTranslations] === text ||
-            danishTranslations[key as keyof typeof danishTranslations] ===
-              text ||
-            spanishTranslations[key as keyof typeof spanishTranslations] ===
-              text
-        ) as keyof typeof englishTranslations;
+          for (const optionKey of questionKeys) {
+            const baseKey = optionKey.replace("Options", "");
+            const currentQuestion = currentTranslations[baseKey as keyof typeof currentTranslations];
 
-        if (questionKey) {
-          return englishTranslations[questionKey] as string;
+            if (currentQuestion === originalText) {
+              const currentOptions = currentTranslations[optionKey as keyof typeof currentTranslations] as string[];
+              const englishOptions = englishTranslations[optionKey as keyof typeof englishTranslations] as string[];
+
+              const index = currentOptions.indexOf(text);
+              return index !== -1 ? englishOptions[index] : text;
+            }
+          }
         }
       }
       return text;
@@ -188,59 +140,62 @@ export default function Quiz() {
       language: language,
       section1: {
         age: {
-          question: translateToEnglish(
+          question: translateTextToEnglish(
             translations[language as keyof typeof translations].section1.age,
             "section1",
-            "age"
+            "age",
+            true
           ),
           answer: answers.section1?.age || "",
         },
         gender: {
-          question: translateToEnglish(
+          question: translateTextToEnglish(
             translations[language as keyof typeof translations].section1.gender,
             "section1",
-            "gender"
+            "gender",
+            true
           ),
-          answer: translateToEnglish(
+          answer: translateTextToEnglish(
             answers.section1?.gender || "",
             "section1",
-            translations[language as keyof typeof translations].section1.gender
+            translations[language as keyof typeof translations].section1.gender,
+            false
           ),
         },
       },
       section2: {
         mirrorBothers: {
-          question: translateToEnglish(
-            translations[language as keyof typeof translations].section2
-              .mirrorBothers,
+          question: translateTextToEnglish(
+            translations[language as keyof typeof translations].section2.mirrorBothers,
             "section2",
-            "mirrorBothers"
+            "mirrorBothers",
+            true
           ),
           answers: answers.section2?.mirrorBothers
             ? (answers.section2.mirrorBothers as string[]).map((answer) =>
-                translateToEnglish(
+                translateTextToEnglish(
                   answer,
                   "section2",
-                  translations[language as keyof typeof translations].section2
-                    .mirrorBothers
+                  translations[language as keyof typeof translations].section2.mirrorBothers,
+                  false
                 )
               )
             : [],
         },
         everydayEffect: {
-          question: translateToEnglish(
-            translations[language as keyof typeof translations].section2
-              .everydayEffect,
+          question: translateTextToEnglish(
+            translations[language as keyof typeof translations].section2.everydayEffect,
             "section2",
-            "everydayEffect"
+            "everydayEffect",
+            true
           ),
           answers: answers.section2?.everydayEffect
             ? (answers.section2.everydayEffect as string[]).map((answer) =>
-                translateToEnglish(
+                translateTextToEnglish(
                   answer,
                   "section2",
-                  translations[language as keyof typeof translations].section2
-                    .everydayEffect
+                  translations[language as keyof typeof translations].section2.everydayEffect,
+                  false
                 )
               )
             : [],
@@ -248,54 +203,55 @@ export default function Quiz() {
       },
       section3: {
         triedSoFar: {
-          question: translateToEnglish(
-            translations[language as keyof typeof translations].section3
-              .triedSoFar,
+          question: translateTextToEnglish(
+            translations[language as keyof typeof translations].section3.triedSoFar,
             "section3",
-            "triedSoFar"
+            "triedSoFar",
+            true
           ),
           answers: answers.section3?.triedSoFar
             ? (answers.section3.triedSoFar as string[]).map((answer) =>
-                translateToEnglish(
+                translateTextToEnglish(
                   answer,
                   "section3",
-                  translations[language as keyof typeof translations].section3
-                    .triedSoFar
+                  translations[language as keyof typeof translations].section3.triedSoFar,
+                  false
                 )
               )
             : [],
         },
         wishLessNoticeable: {
-          question: translateToEnglish(
-            translations[language as keyof typeof translations].section3
-              .wishLessNoticeable,
+          question: translateTextToEnglish(
+            translations[language as keyof typeof translations].section3.wishLessNoticeable,
             "section3",
-            "wishLessNoticeable"
+            "wishLessNoticeable",
+            true
           ),
           answers: answers.section3?.wishLessNoticeable
             ? (answers.section3.wishLessNoticeable as string[]).map((answer) =>
-                translateToEnglish(
+                translateTextToEnglish(
                   answer,
                   "section3",
-                  translations[language as keyof typeof translations].section3
-                    .wishLessNoticeable
+                  translations[language as keyof typeof translations].section3.wishLessNoticeable,
+                  false
                 )
               )
             : [],
         },
         whyBuy: {
-          question: translateToEnglish(
+          question: translateTextToEnglish(
             translations[language as keyof typeof translations].section3.whyBuy,
             "section3",
-            "whyBuy"
+            "whyBuy",
+            true
           ),
           answers: answers.section3?.whyBuy
             ? (answers.section3.whyBuy as string[]).map((answer) =>
-                translateToEnglish(
+                translateTextToEnglish(
                   answer,
                   "section3",
-                  translations[language as keyof typeof translations].section3
-                    .whyBuy
+                  translations[language as keyof typeof translations].section3.whyBuy,
+                  false
                 )
               )
             : [],
@@ -304,7 +260,11 @@ export default function Quiz() {
     };
 
     return preparedData;
-  }, [answers, language, translateToEnglish]);
+  }, [
+    answers,
+    language,
+    translateTextToEnglish,
+  ]);
 
   const handleSubmit = useCallback(async () => {
     const dataToSubmit = prepareDataForSubmission();

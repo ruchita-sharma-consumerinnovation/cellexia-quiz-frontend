@@ -5,7 +5,7 @@ export async function POST(request: Request) {
 
   // This is a mock authentication.
   // In a real application, you would validate against a database or external service.
-  if (username === 'admin' && password === 'password') {
+  if (username === 'admin' && password === 'admin@123') {
     return NextResponse.json({ message: 'Login successful' })
   } else {
     return NextResponse.json({ message: 'Invalid credentials' }, { status: 401 })

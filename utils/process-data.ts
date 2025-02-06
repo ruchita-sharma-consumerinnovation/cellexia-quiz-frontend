@@ -15,16 +15,22 @@ interface SurveyResponse {
   }
 }
 
-export function processData(data: SurveyResponse[], section: string, question: string) {
+export function processData(data: SurveyResponse[], section: keyof SurveyResponse, question: string) {
   const counts: { [key: string]: number } = {}
 
   data.forEach((response) => {
-    const answers = response[section][question].answers || [response[section][question].answer]
-    answers.forEach((answer) => {
-      counts[answer] = (counts[answer] || 0) + 1
-    })
+    
+    const sectionData = response[section] as Record<string, { question: string; answer?: string; answers?: string[] }>
+
+    if (sectionData && sectionData[question]) {
+      const answers = sectionData[question].answers || [sectionData[question].answer]
+      answers.forEach((answer) => {
+        if (answer) counts[answer] = (counts[answer] || 0) + 1
+      })
+    }
   })
 
   return Object.entries(counts).map(([answer, count]) => ({ answer, count }))
 }
+
 

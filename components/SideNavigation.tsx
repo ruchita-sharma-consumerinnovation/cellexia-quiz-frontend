@@ -47,7 +47,7 @@ export function SideNavigation() {
               onClick={() => handleTabChange('analytics')}
               isActive={activeTab === 'analytics'}
             >
-              <FileText className="mr-2" />
+               <BarChart className="mr-2" /> Analytics
               Analytics
             </SidebarMenuButton>
           </SidebarMenuItem>
