@@ -297,7 +297,7 @@ export const translations = {
     section1: {
       title: "Sección 1",
       age: "¿Cuál es tu edad?",
-      gender: "¿Con qué género te identificas?",
+      gender: "¿Cuál es su género?",
       ageOptions: ["18-25", "26-35", "36-45", "46-55", "56-65", "66-75", "75+"],
       genderOptions: ["Hombre", "Mujer", "Prefiero no decirlo"],
     },
