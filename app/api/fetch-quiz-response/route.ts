@@ -5,6 +5,7 @@ export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url)
     const id = searchParams.get('id')
+    const sortOrder = searchParams.get('sort') === 'asc' ? 'ASC' : 'DESC' // Default to DESC
 
     const dbClient = getDbClient()
 
@@ -20,8 +21,8 @@ export async function GET(request: Request) {
 
       return NextResponse.json(result.rows[0], { status: 200 })
     } else {
-      // Fetch all quiz_data without IDs or timestamps
-      const query = `SELECT * FROM quiz_responses;`
+      // Fetch all quiz_data with sorting by created_at
+      const query = `SELECT * FROM quiz_responses ORDER BY created_at ${sortOrder};`
       const result = await dbClient.query(query)
 
       return NextResponse.json(result.rows, { status: 200 })

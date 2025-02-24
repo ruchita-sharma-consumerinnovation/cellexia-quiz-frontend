@@ -51,11 +51,14 @@ export default function Dashboard() {
     null
   );
 
+  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("desc");
+  const [searchId, setSearchId] = useState("");
+
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
         const response = await fetch(
-          "/api/fetch-quiz-response",
+          `/api/fetch-quiz-response?sort=${sortOrder}`,
           {
             method: "GET",
             headers: { "Content-Type": "application/json" },
@@ -69,6 +72,7 @@ export default function Dashboard() {
 
         const result = await response.json();
         console.log("Data fetched successfully:", result);
+        console.log(sortOrder);
 
         setData(result);
       } catch (error) {
@@ -79,51 +83,78 @@ export default function Dashboard() {
       }
     };
     fetchDashboardData();
-  }, []);
+  }, [sortOrder]);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
-
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Quiz Response Dashboard</h1>
+  
+      {/* Filter Controls: Button & Input Side by Side */}
+      <div className="flex items-center gap-4 mb-4">
+        <Button
+          onClick={() => {
+            const newSortOrder = sortOrder === "asc" ? "desc" : "asc";
+            console.log("Toggling sort order to:", newSortOrder);
+            setSortOrder(newSortOrder);
+          }}
+        >
+          Sort by Date ({sortOrder === "asc" ? "Oldest First" : "Newest First"})
+        </Button>
+  
+        <input
+          type="number"
+          value={searchId}
+          onChange={(e) => setSearchId(e.target.value)}
+          placeholder="Enter response ID"
+          className="w-56 p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+  
+      {/* Response Cards Start Below */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {data.map((response) => (
-          <Card key={response.uuid}>
-            <CardHeader>
-              <CardTitle>Response {response.id}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>Language: {response.quiz_data.language}</p>
-              <p>Age: {response.quiz_data.section1.age.answer}</p>
-              <p>Gender: {response.quiz_data.section1.gender.answer}</p>
-              <p>Submitted: {formatDate(response.created_at)}</p>
-            </CardContent>
-            <CardFooter>
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button onClick={() => setSelectedResponse(response)}>
-                    View
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="max-w-[800px] w-[90vw]">
-                  <DialogHeader>
-                    <DialogTitle>Response Details</DialogTitle>
-                  </DialogHeader>
-                  <ScrollArea className="h-[60vh] mt-4">
-                    {selectedResponse && (
-                      <ResponseDetails response={selectedResponse} />
-                    )}
-                  </ScrollArea>
-                </DialogContent>
-              </Dialog>
-            </CardFooter>
-          </Card>
-        ))}
+        {data
+          .filter((response) =>
+            searchId ? response.id === Number(searchId) : true
+          )
+          .map((response) => (
+            <Card key={response.uuid}>
+              <CardHeader>
+                <CardTitle>Response {response.id}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>Language: {response.quiz_data.language}</p>
+                <p>Age: {response.quiz_data.section1.age.answer}</p>
+                <p>Gender: {response.quiz_data.section1.gender.answer}</p>
+                <p>Submitted: {formatDate(response.created_at)}</p>
+              </CardContent>
+              <CardFooter>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button onClick={() => setSelectedResponse(response)}>
+                      View
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-[800px] w-[90vw]">
+                    <DialogHeader>
+                      <DialogTitle>Response Details</DialogTitle>
+                    </DialogHeader>
+                    <ScrollArea className="h-[60vh] mt-4">
+                      {selectedResponse && (
+                        <ResponseDetails response={selectedResponse} />
+                      )}
+                    </ScrollArea>
+                  </DialogContent>
+                </Dialog>
+              </CardFooter>
+            </Card>
+          ))}
       </div>
     </div>
   );
+  
 }
 
 function ResponseDetails({ response }: { response: QuizResponse }) {
