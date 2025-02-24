@@ -53,6 +53,7 @@ export default function Dashboard() {
 
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("desc");
   const [searchId, setSearchId] = useState("");
+  const [selectedLanguage, setSelectedLanguage] = useState("");
 
   useEffect(() => {
     const fetchDashboardData = async () => {
@@ -111,6 +112,21 @@ export default function Dashboard() {
           placeholder="Enter response ID"
           className="w-56 p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
+
+<select
+  value={selectedLanguage}
+  onChange={(e) => setSelectedLanguage(e.target.value)}
+  className="w-56 p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+>
+  <option value="">All Languages</option>
+  <option value="en">English</option>
+  <option value="nl">Dutch</option>
+  <option value="da">Danish</option>
+  <option value="fr">French</option>
+  <option value="es">Spanish</option>
+</select>
+
+
       </div>
   
       {/* Response Cards Start Below */}
@@ -118,6 +134,9 @@ export default function Dashboard() {
         {data
           .filter((response) =>
             searchId ? response.id === Number(searchId) : true
+          )
+          .filter((response) =>
+            selectedLanguage ? response.quiz_data.language.toLowerCase() === selectedLanguage : true
           )
           .map((response) => (
             <Card key={response.uuid}>
